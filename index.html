@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="png" href="img/favicon.png">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<title>Steam Login</title>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="script.js"></script>
+   </head>
+<body>
+ 	<div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+    	<div class="front">
+			<img src="img/flip.jpg">
+      	</div>
+      	<div class="back">
+
+        <div class="text">
+          	<span class="text-1">Complete miles of journey <br> with one step</span>
+          	<span class="text-2">Let's get started</span>
+        </div>
+      	</div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title"><a href="" onclick="return false;"><img src="img/head.png" alt="head" class="headimg" onclick="credits()"></a></div>
+          <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" alt="loginemail" id="loginemail" maxlength="35" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" id="password" maxlength="35" required>
+				<i class='bx bx-hide eye-icon' onclick="toggle1()"></i>
+              </div>
+              <div class="text"><a href="https://help.steampowered.com/en/wizard/HelpWithLoginInfo?accountsearch=1&issueid=406" target="blank">Forgot password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Submit" onclick="Check()">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+			<div class="title"><img src="img/head.png" class="headimg"></div>
+        <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Enter your name" alt="name" required maxlength="35">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" maxlength="35" alt="email" id="registeremail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" id="password" alt="registerpassword" required maxlength="64">
+				<i class='bx bx-hide eye-icon' onclick="toggle1()"></i>
+              </div>
+              <div class="button input-box">
+                <input type="button" value="Submit" onclick="Save()">
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
