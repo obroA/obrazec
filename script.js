@@ -12,31 +12,45 @@ function toggle1(){
 
 
 function Save(){
-	localStorage.setItem('email', JSON.stringify("registeremail"));
-	localStorage.setItem('password', JSON.stringify("registerpassword"));
-    Swal.fire({
-        icon: 'success',
-        title: 'you have successfully registered'
-     })
-    event.preventDefault();
+	var i = document.getElementById("name").value;
+	var e = document.getElementById("email").value;
+	var p = document.getElementById("password").value;
+
+	if(!/^[a-zA-Z]*$/.test(i)){
+		alert("Please enter name only in letters");
+
+	}else{
+	Swal.fire({
+		icon: 'success',
+		title: 'you have successfully registered'
+	})
+	Event.preventDefault();
+	localStorage.setItem('setemail', e);
+	localStorage.setItem('setpassword', p);
+	}
 }
 
 function Check(){
 		var email = document.getElementById("loginemail").value;
-		var password = document.getElementById("password").value;
+		var password = document.getElementById("loginpassword").value;
 		
-		if(localStorage.getItem('email') == email && localStorage.getItem('password')==password) {
-			Swal.fire({
-				icon: 'success',
-				title: 'you have successfully logged in'
-			})
-		}
-		else {
+		if(localStorage.getItem('setpassword') != password) {
 			Swal.fire({
 				icon: 'error',
 				title: 'Oops...',
 				text: 'Please check your password and account name and try again.',
 			})
+			document.getElementById("loginemail").value=null;
+			document.getElementById("loginpassword").value=null;
+			Event.preventDefault();
+
+		}
+		else {
+			Swal.fire({
+				icon: 'success',
+				title: 'You have successfully logged in'
+			})
+			Event.preventDefault();
 		
 		}
 
@@ -47,8 +61,7 @@ function credits(){
 	Swal.fire({
 		title: '<strong>CREDITS</strong>',
 		icon: 'info',
-		html:
-		  'Made by Aleksandar Obrovac, 4.RA'
+		html:'Made by Aleksandar Obrovac, 4.RA'
 	  })
 
 }

@@ -64,7 +64,7 @@ body{
   position: absolute;
   height: 100%;
   width: 100%;
-  background: var(--color);
+  background: #33627c5d;
   opacity: 0.5;
   z-index: 12;
 }
@@ -166,7 +166,7 @@ body{
 }
 .form-content .input-box input:focus,
 .form-content .input-box input:valid{
-	background: var(--color);
+	background: #33627c81;
 }
 .form-content .input-box i{
   position: absolute;
@@ -180,6 +180,7 @@ body{
 }
 .forms .form-content .text a{
   text-decoration: none;
+  color: var(--color);
 }
 .forms .form-content .text a:hover{
   text-decoration: underline;
